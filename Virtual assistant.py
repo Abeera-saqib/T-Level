@@ -62,7 +62,7 @@ def core_code():
         elif "what time is it" in phrase:
             theTime()
         elif "what day is it" in phrase:
-            theday()
+            theDay()
         elif "on youtube" in phrase:
             opne_youtube(phrase)
         elif "thank you" in phrase or "thanks" in phrase:
@@ -101,7 +101,7 @@ def audioinput():
             phrase = recognizer.recognize_google(audio, language='en-us')
             print(f"You said: {phrase}")
             return phrase
-        except r.UknownValueError:
+        except sr.UnknownValueError:
             print("Sorry, I didn't catch that.")
             assistant("Sorry, I didn't catch that. Could you repeat?")
         except sr.RequestError as e:
